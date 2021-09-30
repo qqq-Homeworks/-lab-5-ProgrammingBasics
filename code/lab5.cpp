@@ -12,7 +12,7 @@ void bubbleSort(int *arrToSort, int size, int k, bool isPrintNeeded);
 
 void selectSort(int *arrToSort, int size, int k, bool isPrintNeeded);
 
-void generateArrays(int *arrayToFill1, int *arrayToFill2, int *arrayToFill3, int *arrayToFill4, int size);
+void generateArrays(int *arrayToFill1, int *arrayToFill2, int size);
 
 int main() {
 
@@ -20,78 +20,60 @@ int main() {
     int n = 5;
     int *a1 = new int[n];
     int *a2 = new int[n];
-    int *a3 = new int[n];
-    int *a4 = new int[n];
-    generateArrays(a1, a2, a3, a4, 5);
+    generateArrays(a1, a2, 5);
 
     cout << "Array before sort:\n";
     printArray(a1, 5);
     cout << "\n\t\tSORTING DEFAULT RANDOM ARRAY:\n";
-    bubbleSort(a1, 5, 1, true);
-    selectSort(a2, 5, 1, true);
-    bubbleSort(a3, 5, -1, true);
-    selectSort(a4, 5, -1, true);
+    bubbleSort(a1, 5, -1, true);
+    selectSort(a2, 5, -1, true);
     cout << "\n\t\tSORTING INCREASED ARRAY:\n";
     bubbleSort(a1, 5, -1, true);
     selectSort(a2, 5, -1, true);
     cout << "\n\t\tSORTING DECREASED ARRAY:\n";
-    bubbleSort(a3, 5, 1, true);
-    selectSort(a4, 5, 1, true);
+    bubbleSort(a1, 5, 1, true);
+    selectSort(a2, 5, 1, true);
 
     delete[] a1;
     delete[] a2;
-    delete[] a3;
-    delete[] a4;
 
     // 50 elements
     n = 50;
     a1 = new int[n];
     a2 = new int[n];
-    a3 = new int[n];
-    a4 = new int[n];
-    generateArrays(a1, a2, a3, a4, 50);
+    generateArrays(a1, a2, 50);
 
     cout << "\n\t\tSORTING DEFAULT RANDOM ARRAY:\n";
-    bubbleSort(a1, 50, 1, false);
-    selectSort(a2, 50, 1, false);
-    bubbleSort(a3, 50, -1, false);
-    selectSort(a4, 50, -1, false);
+    bubbleSort(a1, 50, -1, false);
+    selectSort(a2, 50, -1, false);
     cout << "\n\t\tSORTING INCREASED ARRAY:\n";
     bubbleSort(a1, 50, -1, false);
     selectSort(a2, 50, -1, false);
     cout << "\n\t\tSORTING DECREASED ARRAY:\n";
-    bubbleSort(a3, 50, 1, false);
-    selectSort(a4, 50, 1, false);
+    bubbleSort(a1, 50, 1, false);
+    selectSort(a2, 50, 1, false);
 
     delete[] a1;
     delete[] a2;
-    delete[] a3;
-    delete[] a4;
 
     // 500 elements
     n = 500;
     a1 = new int[n];
     a2 = new int[n];
-    a3 = new int[n];
-    a4 = new int[n];
-    generateArrays(a1, a2, a3, a4, 500);
+    generateArrays(a1, a2, 500);
 
     cout << "\n\t\tSORTING DEFAULT RANDOM ARRAY:\n";
-    bubbleSort(a1, 500, 1, false);
-    selectSort(a2, 500, 1, false);
-    bubbleSort(a3, 500, -1, false);
-    selectSort(a4, 500, -1, false);
+    bubbleSort(a1, 500, -1, false);
+    selectSort(a2, 500, -1, false);
     cout << "\n\t\tSORTING INCREASED ARRAY:\n";
     bubbleSort(a1, 500, -1, false);
     selectSort(a2, 500, -1, false);
     cout << "\n\t\tSORTING DECREASED ARRAY:\n";
-    bubbleSort(a3, 500, 1, false);
-    selectSort(a4, 500, 1, false);
+    bubbleSort(a1, 500, 1, false);
+    selectSort(a2, 500, 1, false);
 
     delete[] a1;
     delete[] a2;
-    delete[] a3;
-    delete[] a4;
 
 
     return 0;
@@ -161,14 +143,12 @@ void selectSort(int *arrToSort, int size, int k, bool isPrintNeeded) {
         printArray(arrToSort, size);
 }
 
-void generateArrays(int *arrayToFill1, int *arrayToFill2, int *arrayToFill3, int *arrayToFill4, int size) {
+void generateArrays(int *arrayToFill1, int *arrayToFill2, int size) {
 
     srand((unsigned int) time(NULL));
     rand();
     for (int i = 0; i < size; i++) {
         arrayToFill1[i] = iRandom(1, 9);
         arrayToFill2[i] = arrayToFill1[i];
-        arrayToFill3[i] = arrayToFill1[i];
-        arrayToFill4[i] = arrayToFill1[i];
     }
 }
