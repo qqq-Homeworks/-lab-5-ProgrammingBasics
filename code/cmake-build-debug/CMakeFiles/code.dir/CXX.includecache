@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/qqq/Documents/University/1 course/ 1 term/programming basics/labs/5 lab/code/lab5.cpp
+time.h
+-
+stdlib.h
+-
+iostream
+-
+
