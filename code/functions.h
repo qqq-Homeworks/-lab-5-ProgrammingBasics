@@ -2,7 +2,6 @@
 #include <stdlib.h> // srand, rand
 #include <iostream>
 
-
 int iRandom(int a, int b)
 {
     return a + rand() % (b - a);
@@ -89,4 +88,48 @@ void generateArrays(int *arrayToFill1, int *arrayToFill2, int size)
         arrayToFill1[i] = iRandom(1, 9);
         arrayToFill2[i] = arrayToFill1[i];
     }
+}
+void taskFor5(int *arr1, int *arr2)
+{
+    generateArrays(arr1, arr2, 5);
+
+    std::cout << "Array before sort:\n";
+    printArray(arr1, 5);
+    std::cout << "\n\t\tSORTING DEFAULT RANDOM ARRAY:\n";
+    bubbleSort(arr1, 5, -1, true);
+    selectSort(arr2, 5, -1, true);
+    std::cout << "\n\t\tSORTING INCREASED ARRAY:\n";
+    bubbleSort(arr1, 5, -1, true);
+    selectSort(arr2, 5, -1, true);
+    std::cout << "\n\t\tSORTING DECREASED ARRAY:\n";
+    bubbleSort(arr1, 5, 1, true);
+    selectSort(arr2, 5, 1, true);
+}
+void taskFor50(int *arr1, int *arr2)
+{
+    generateArrays(arr1, arr2, 50);
+
+    std::cout << "\n\t\tSORTING DEFAULT RANDOM ARRAY:\n";
+    bubbleSort(arr1, 50, -1, false);
+    selectSort(arr2, 50, -1, false);
+    std::cout << "\n\t\tSORTING INCREASED ARRAY:\n";
+    bubbleSort(arr1, 50, -1, false);
+    selectSort(arr2, 50, -1, false);
+    std::cout << "\n\t\tSORTING DECREASED ARRAY:\n";
+    bubbleSort(arr1, 50, 1, false);
+    selectSort(arr2, 50, 1, false);
+}
+void taskFor500(int *arr1, int *arr2)
+{
+    generateArrays(arr1, arr2, 500);
+
+    std::cout << "\n\t\tSORTING DEFAULT RANDOM ARRAY:\n";
+    bubbleSort(arr1, 500, -1, false);
+    selectSort(arr2, 500, -1, false);
+    std::cout << "\n\t\tSORTING INCREASED ARRAY:\n";
+    bubbleSort(arr1, 500, -1, false);
+    selectSort(arr2, 500, -1, false);
+    std::cout << "\n\t\tSORTING DECREASED ARRAY:\n";
+    bubbleSort(arr1, 500, 1, false);
+    selectSort(arr2, 500, 1, false);
 }
