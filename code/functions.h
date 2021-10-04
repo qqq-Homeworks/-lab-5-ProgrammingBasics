@@ -1,6 +1,7 @@
 #include <time.h>   // time
 #include <stdlib.h> // srand, rand
 #include <iostream>
+#include <iomanip>
 
 int iRandom(int a, int b)
 {
@@ -16,18 +17,18 @@ void printArray(int *arrToPrint, int size)
     std::cout << "\n\n";
 }
 
-void bubbleSort(int *arrToSort, int size, int k, bool isPrintNeeded)
+void bubbleSort(int *arrToSort, int size, int k, int &replaceCount, int &comparasionCount, bool isPrintNeeded)
 {
     //1 - increase, -1 - decrease
-    int replaceCount = 0;
-    int comparsionCount = 0;
+    replaceCount = 0;
+    comparasionCount = 0;
     bool swapped;
     for (int i = 0; i < size - 1; i++)
     {
         swapped = false;
         for (int j = 0; j < size - 1 - i; j++)
         {
-            comparsionCount++;
+            comparasionCount++;
             if (arrToSort[j] * k > arrToSort[j + 1] * k)
             {
                 replaceCount++;
@@ -40,18 +41,19 @@ void bubbleSort(int *arrToSort, int size, int k, bool isPrintNeeded)
             break;
         }
     }
-
-    std::cout << "sorted(" << size << ") with BubbleSort by ";
-    k == 1 ? std::cout << "increace\n" : std::cout << "decreace\n";
-    std::cout << "replaceCount = " << replaceCount << " comparsionCount = " << comparsionCount << '\n';
     if (isPrintNeeded)
+    {
+        std::cout << "sorted(" << size << ") with BubbleSort by ";
+        k == 1 ? std::cout << "increace\n" : std::cout << "decreace\n";
+        std::cout << "replaceCount = " << replaceCount << " comparsionCount = " << comparasionCount << '\n';
         printArray(arrToSort, size);
+    }
 }
 
-void selectSort(int *arrToSort, int size, int k, bool isPrintNeeded)
+void selectSort(int *arrToSort, int size, int k, int &replaceCount, int &comparasionCount, bool isPrintNeeded)
 {
-    int replaceCount = 0;
-    int comparsionCount = 0;
+    replaceCount = 0;
+    comparasionCount = 0;
     int fixed;
 
     for (int i = 0; i < size - 1; i++)
@@ -59,7 +61,7 @@ void selectSort(int *arrToSort, int size, int k, bool isPrintNeeded)
         fixed = i;
         for (int j = i + 1; j < size; j++)
         {
-            comparsionCount++;
+            comparasionCount++;
             if (k * arrToSort[j] < k * arrToSort[fixed])
             {
                 fixed = j;
@@ -71,16 +73,17 @@ void selectSort(int *arrToSort, int size, int k, bool isPrintNeeded)
             replaceCount++;
         }
     }
-    std::cout << "sorted(" << size << ") with SelectSort by ";
-    k == 1 ? std::cout << "increace\n" : std::cout << "decreace\n";
-    std::cout << "replaceCount = " << replaceCount << " comparsionCount = " << comparsionCount << '\n';
     if (isPrintNeeded)
+    {
+        std::cout << "sorted(" << size << ") with SelectSort by ";
+        k == 1 ? std::cout << "increace\n" : std::cout << "decreace\n";
+        std::cout << "replaceCount = " << replaceCount << " comparsionCount = " << comparasionCount << '\n';
         printArray(arrToSort, size);
+    }
 }
 
 void generateArrays(int *arrayToFill1, int *arrayToFill2, int size)
 {
-
     srand((unsigned int)time(NULL));
     rand();
     for (int i = 0; i < size; i++)
@@ -89,47 +92,46 @@ void generateArrays(int *arrayToFill1, int *arrayToFill2, int size)
         arrayToFill2[i] = arrayToFill1[i];
     }
 }
-void taskFor5(int *arr1, int *arr2)
+void task1(int n)
 {
-    generateArrays(arr1, arr2, 5);
-
+    int *a1 = new int[n];
+    int *a2 = new int[n];
+    int replaceCount, comparsionCount;
+    int &rc = replaceCount;
+    int &cc = comparsionCount;
+    generateArrays(a1, a2, n);
     std::cout << "Array before sort:\n";
-    printArray(arr1, 5);
+    printArray(a1, n);
     std::cout << "\n\t\tSORTING DEFAULT RANDOM ARRAY:\n";
-    bubbleSort(arr1, 5, -1, true);
-    selectSort(arr2, 5, -1, true);
+    bubbleSort(a1, n, -1,rc, cc, 1);
+    selectSort(a2, n, -1, rc, cc, 1);
     std::cout << "\n\t\tSORTING INCREASED ARRAY:\n";
-    bubbleSort(arr1, 5, -1, true);
-    selectSort(arr2, 5, -1, true);
+    bubbleSort(a1, n, -1, rc, cc, 1);
+    selectSort(a2, n, -1, rc, cc, 1);
     std::cout << "\n\t\tSORTING DECREASED ARRAY:\n";
-    bubbleSort(arr1, 5, 1, true);
-    selectSort(arr2, 5, 1, true);
+    bubbleSort(a1, n, 1, rc, cc, 1);
+    selectSort(a2, n, 1, rc, cc, 1);
+    delete[] a1;
+    delete[] a2;
 }
-void taskFor50(int *arr1, int *arr2)
+void task2()
 {
-    generateArrays(arr1, arr2, 50);
+    std::cout << "\t\tN\treplaces\tcomparions\n";
+    int replaceCount, comparsionCount;
+    int &rc = replaceCount;
+    int &cc = comparsionCount;
+    for (int i = 5; i < 501; i *= 10)
+    {
+        int *a1 = new int[i];
+        int *a2 = new int[i];
 
-    std::cout << "\n\t\tSORTING DEFAULT RANDOM ARRAY:\n";
-    bubbleSort(arr1, 50, -1, false);
-    selectSort(arr2, 50, -1, false);
-    std::cout << "\n\t\tSORTING INCREASED ARRAY:\n";
-    bubbleSort(arr1, 50, -1, false);
-    selectSort(arr2, 50, -1, false);
-    std::cout << "\n\t\tSORTING DECREASED ARRAY:\n";
-    bubbleSort(arr1, 50, 1, false);
-    selectSort(arr2, 50, 1, false);
-}
-void taskFor500(int *arr1, int *arr2)
-{
-    generateArrays(arr1, arr2, 500);
-
-    std::cout << "\n\t\tSORTING DEFAULT RANDOM ARRAY:\n";
-    bubbleSort(arr1, 500, -1, false);
-    selectSort(arr2, 500, -1, false);
-    std::cout << "\n\t\tSORTING INCREASED ARRAY:\n";
-    bubbleSort(arr1, 500, -1, false);
-    selectSort(arr2, 500, -1, false);
-    std::cout << "\n\t\tSORTING DECREASED ARRAY:\n";
-    bubbleSort(arr1, 500, 1, false);
-    selectSort(arr2, 500, 1, false);
+        generateArrays(a1, a2, i);
+        bubbleSort(a1, i, 1, rc, cc, 0);
+        std::cout << "buble sort:  " << std::setw(5) << i << std::setw(12) << replaceCount << std::setw(16) << comparsionCount << std::endl;
+        selectSort(a2, i, 1, rc, cc, 0);
+        std::cout << "select sort: " << std::setw(5) << i << std::setw(12) << replaceCount << std::setw(16) << comparsionCount << std::endl;
+        delete[] a1;
+        delete[] a2;
+        std::cout << "------------------------------------------------------------\n";
+    }
 }

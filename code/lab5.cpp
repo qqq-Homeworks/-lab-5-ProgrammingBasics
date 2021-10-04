@@ -8,30 +8,8 @@ using namespace std;
 int main()
 {
 
-    // 5 elements
-    int n = 5;
-    int *a1 = new int[n];
-    int *a2 = new int[n];
-    taskFor5(a1, a2);
-    delete[] a1;
-    delete[] a2;
+    task1(5);
 
-    // 50 elements
-    n = 50;
-    a1 = new int[n];
-    a2 = new int[n];
-    taskFor50(a1, a2);
-    delete[] a1;
-    delete[] a2;
-
-    // 500 elements
-    n = 500;
-    a1 = new int[n];
-    a2 = new int[n];
-    taskFor500(a1, a2);
-    delete[] a1;
-    delete[] a2;
-
+    task2();
     return 0;
 }
-
