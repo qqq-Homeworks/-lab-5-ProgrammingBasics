@@ -14,8 +14,8 @@ void exit(bool &continueq)
     std::cout << "exit";
     for (int i = 0; i < 3; i++)
     {
+        std::this_thread::sleep_for(std::chrono::milliseconds(800));
         std::cout << '.';
-        std::this_thread::sleep_for(std::chrono::milliseconds(80));
     }
     continueq = false;
 }

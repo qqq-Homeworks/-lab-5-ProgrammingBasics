@@ -1,8 +1,10 @@
+#pragma once
 #include <time.h>   // time
 #include <stdlib.h> // srand, rand
 #include <iostream>
 #include <iomanip>
 #include "functions.h"
+
 
 int iRandom(int a, int b)
 {
@@ -11,11 +13,12 @@ int iRandom(int a, int b)
 
 void printArray(int *arrToPrint, int size)
 {
+    std::cout << "\n\t\t _________\n\t\t|";
     for (int i = 0; i < size; i++)
     {
         std::cout << arrToPrint[i] << ' ';
     }
-    std::cout << "\n\n";
+    std::cout << "\b|\n\t\t ‾‾‾‾‾‾‾‾‾\n";
 }
 
 void bubbleSort(int *arrToSort, int size, int k, int &replaceCount, int &comparasionCount, bool isPrintNeeded)
@@ -46,7 +49,7 @@ void bubbleSort(int *arrToSort, int size, int k, int &replaceCount, int &compara
     {
         std::cout << "sorted(" << size << ") with BubbleSort by ";
         k == 1 ? std::cout << "increace\n" : std::cout << "decreace\n";
-        std::cout << "replaceCount = " << replaceCount << " comparsionCount = " << comparasionCount << '\n';
+        std::cout << "replaceCount = " << replaceCount << " comparsionCount = " << comparasionCount;
         printArray(arrToSort, size);
     }
 }
@@ -78,7 +81,7 @@ void selectSort(int *arrToSort, int size, int k, int &replaceCount, int &compara
     {
         std::cout << "sorted(" << size << ") with SelectSort by ";
         k == 1 ? std::cout << "increace\n" : std::cout << "decreace\n";
-        std::cout << "replaceCount = " << replaceCount << " comparsionCount = " << comparasionCount << '\n';
+        std::cout << "replaceCount = " << replaceCount << " comparsionCount = " << comparasionCount ;
         printArray(arrToSort, size);
     }
 }
