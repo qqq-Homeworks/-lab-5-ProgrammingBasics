@@ -11,11 +11,11 @@ void introduce(const std::string &authorsName, int sex)
 }
 void exit(bool &continueq)
 {
-    std::cout << "exit";
+    std::cout << "exit " << std::flush;
     for (int i = 0; i < 3; i++)
     {
-        std::this_thread::sleep_for(std::chrono::milliseconds(800));
-        std::cout << '.';
+        std::cout << ". " << std::flush;
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
     continueq = false;
 }

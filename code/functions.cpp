@@ -6,6 +6,7 @@
 #include "functions.h"
 
 
+
 int iRandom(int a, int b)
 {
     return a + rand() % (b - a);
@@ -16,7 +17,7 @@ void printArray(int *arrToPrint, int size)
     std::cout << "\n\t\t _________\n\t\t|";
     for (int i = 0; i < size; i++)
     {
-        std::cout << arrToPrint[i] << ' ';
+        std::cout << arrToPrint[i] << '|';
     }
     std::cout << "\b|\n\t\t ‾‾‾‾‾‾‾‾‾\n";
 }
