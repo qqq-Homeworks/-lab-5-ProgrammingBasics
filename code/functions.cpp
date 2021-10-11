@@ -121,6 +121,7 @@ void task1(int n)
 }
 void task2()
 {
+    int qwe;
     std::cout << "\t\tN\treplaces\tcomparions\n";
     int replaceCount, comparsionCount;
     int &rc = replaceCount;
