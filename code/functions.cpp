@@ -107,8 +107,8 @@ void task1(int n)
     generateArrays(a1, a2, n);
     std::cout << "Array before sort:\n";
     printArray(a1, n);
-    std::cout << "\n\t\tSORTING DEFAULT RANDOM ARRAY:\n";
-    bubbleSort(a1, n, -1, rc, cc, 1);
+    std::cout << "\n\tSORTING DEFAULT RANDOM ARRAY:\n";
+    bubbleSort(a1, n, -1, rc, cc, 1); 
     selectSort(a2, n, -1, rc, cc, 1);
     std::cout << "\n\t\tSORTING INCREASED ARRAY:\n";
     bubbleSort(a1, n, -1, rc, cc, 1);

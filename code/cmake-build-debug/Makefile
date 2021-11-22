@@ -117,41 +117,65 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named code
+# Target rules for targets named lab5.cpp
 
 # Build rule for target.
-code: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 code
-.PHONY : code
+lab5.cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab5.cpp
+.PHONY : lab5.cpp
 
 # fast build rule for target.
-code/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/build
-.PHONY : code/fast
+lab5.cpp/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5.cpp.dir/build.make CMakeFiles/lab5.cpp.dir/build
+.PHONY : lab5.cpp/fast
 
-lab5.o: lab5.cpp.o
-.PHONY : lab5.o
+functions.o: functions.cpp.o
+.PHONY : functions.o
 
 # target to build an object file
-lab5.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/lab5.cpp.o
-.PHONY : lab5.cpp.o
+functions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5.cpp.dir/build.make CMakeFiles/lab5.cpp.dir/functions.cpp.o
+.PHONY : functions.cpp.o
 
-lab5.i: lab5.cpp.i
-.PHONY : lab5.i
+functions.i: functions.cpp.i
+.PHONY : functions.i
 
 # target to preprocess a source file
-lab5.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/lab5.cpp.i
-.PHONY : lab5.cpp.i
+functions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5.cpp.dir/build.make CMakeFiles/lab5.cpp.dir/functions.cpp.i
+.PHONY : functions.cpp.i
 
-lab5.s: lab5.cpp.s
-.PHONY : lab5.s
+functions.s: functions.cpp.s
+.PHONY : functions.s
 
 # target to generate assembly for a file
-lab5.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/lab5.cpp.s
-.PHONY : lab5.cpp.s
+functions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5.cpp.dir/build.make CMakeFiles/lab5.cpp.dir/functions.cpp.s
+.PHONY : functions.cpp.s
+
+template.o: template.cpp.o
+.PHONY : template.o
+
+# target to build an object file
+template.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5.cpp.dir/build.make CMakeFiles/lab5.cpp.dir/template.cpp.o
+.PHONY : template.cpp.o
+
+template.i: template.cpp.i
+.PHONY : template.i
+
+# target to preprocess a source file
+template.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5.cpp.dir/build.make CMakeFiles/lab5.cpp.dir/template.cpp.i
+.PHONY : template.cpp.i
+
+template.s: template.cpp.s
+.PHONY : template.s
+
+# target to generate assembly for a file
+template.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5.cpp.dir/build.make CMakeFiles/lab5.cpp.dir/template.cpp.s
+.PHONY : template.cpp.s
 
 # Help Target
 help:
@@ -161,10 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... code"
-	@echo "... lab5.o"
-	@echo "... lab5.i"
-	@echo "... lab5.s"
+	@echo "... lab5.cpp"
+	@echo "... functions.o"
+	@echo "... functions.i"
+	@echo "... functions.s"
+	@echo "... template.o"
+	@echo "... template.i"
+	@echo "... template.s"
 .PHONY : help
 
 

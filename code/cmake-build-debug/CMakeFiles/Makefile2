@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = "/Users/qqq/Documents/University/1 course/ 1 term/programming
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/code.dir/all
+all: CMakeFiles/lab5.cpp.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/code.dir/clean
+clean: CMakeFiles/lab5.cpp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/code.dir
+# Target rules for target CMakeFiles/lab5.cpp.dir
 
 # All Build rule for target.
-CMakeFiles/code.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/qqq/Documents/University/1 course/ 1 term/programming basics/labs/5 lab/code/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target code"
-.PHONY : CMakeFiles/code.dir/all
+CMakeFiles/lab5.cpp.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5.cpp.dir/build.make CMakeFiles/lab5.cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5.cpp.dir/build.make CMakeFiles/lab5.cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/qqq/Documents/University/1 course/ 1 term/programming basics/labs/5 lab/code/cmake-build-debug/CMakeFiles" --progress-num=1,2,3 "Built target lab5.cpp"
+.PHONY : CMakeFiles/lab5.cpp.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/code.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/qqq/Documents/University/1 course/ 1 term/programming basics/labs/5 lab/code/cmake-build-debug/CMakeFiles" 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/code.dir/all
+CMakeFiles/lab5.cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/qqq/Documents/University/1 course/ 1 term/programming basics/labs/5 lab/code/cmake-build-debug/CMakeFiles" 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lab5.cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/qqq/Documents/University/1 course/ 1 term/programming basics/labs/5 lab/code/cmake-build-debug/CMakeFiles" 0
-.PHONY : CMakeFiles/code.dir/rule
+.PHONY : CMakeFiles/lab5.cpp.dir/rule
 
 # Convenience name for target.
-code: CMakeFiles/code.dir/rule
-.PHONY : code
+lab5.cpp: CMakeFiles/lab5.cpp.dir/rule
+.PHONY : lab5.cpp
 
 # clean rule for target.
-CMakeFiles/code.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/clean
-.PHONY : CMakeFiles/code.dir/clean
+CMakeFiles/lab5.cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5.cpp.dir/build.make CMakeFiles/lab5.cpp.dir/clean
+.PHONY : CMakeFiles/lab5.cpp.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
